@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "lib": [
+          "es2015",
+          "dom"
+      ],
+      "module": "commonjs",
+      "moduleResolution": "node",
+      "sourceMap": true,
+      "suppressImplicitAnyIndexErrors": true,
+      "target": "es5",
+      "baseUrl": "src",
+      "paths": {
+          "@/*": [
+              "app/*"
+          ]
+      }
+  }
+}
+/*{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./out-tsc/spec",
+    "types": [
+      "jasmine",
+      "node"
+    ]
+  },
+  "files": [
+    "src/test.ts",
+    "src/polyfills.ts"
+  ],
+}*/

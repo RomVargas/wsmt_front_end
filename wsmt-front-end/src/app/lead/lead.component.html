@@ -1,0 +1,236 @@
+<p>lead works!</p>
+<form [formGroup]="reportForm" (ngSubmit)="onSubmit()">
+<h3>Report Title</h3>
+    <!-- Beggin Report Title-->
+    <div class="form-group row">
+        <label for="clientName" class="col-sm-3 col-form-label">Client Name</label>
+        <div class="col-sm-9">
+            <input type="text" placeholder="Client Name" formControlName="clientName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.clientName.errors }" />
+            <div *ngIf="submitted && f.clientName.errors" class="invalid-feedback">
+                <div *ngIf="f.clientName.errors.required">Client Name is required</div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="projectName" class="col-sm-3 col-form-label">Project Name</label>
+        <div class="col-sm-9">
+            <input type="projectName" placeholder="Project Name" formControlName="projectName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.projectName.errors }" />
+            <div *ngIf="submitted && f.projectName.errors" class="invalid-feedback">
+                <div *ngIf="f.projectName.errors.required">Project Name is required</div>
+            </div>
+        </div>
+    </div><!-- End Report Title-->
+    <br>
+    <!-- Beggin Project Status Information-->
+    <h3>Project Status Information</h3>
+    <br>
+    <!-- Status -->
+    <fieldset class="form-group">
+        <div class="row">
+            <legend class="col-form-label col-sm-2 pt-0">Status</legend>
+            <div class="col-6">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="status" formControlName="status" id="statusGreen" value="green"  [ngClass]="{ 'is-invalid': submitted && f.status.errors }" >
+                    <div *ngIf="submitted && f.status.errors" class="invalid-feedback">
+                        <div *ngIf="f.status.errors.required">Status is required</div>
+                    </div>
+                    <div style="background-color:green">
+                        <h6 style="color:white">Green</h6>
+                    </div>
+                    </div>
+                    <div class="form-check">
+                    <input class="form-check-input" type="radio" name="status" formControlName="status" id="statusYellow" value="yellow"  [ngClass]="{ 'is-invalid': submitted && f.projectName.errors }">
+                    <div style="background-color:yellow">
+                        <h6 style="color:white">Yellow</h6>
+                    </div>
+                    </div>
+                    <div class="form-check disabled">
+                    <input class="form-check-input" type="radio" name="status" formControlName="status" id="statusRed" value="red"  [ngClass]="{ 'is-invalid': submitted && f.projectName.errors }">
+                    <div style="background-color:red">
+                        <h6 style="color:white">Red</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </fieldset><!-- Status -->
+    <!-- Scope -->
+    <fieldset class="form-group">
+        <div class="row">
+            <legend class="col-form-label col-sm-2 pt-0">Scope</legend>
+            <div class="col-6">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="scope" formControlName="scope" id="scopeGreen" value="green"  [ngClass]="{ 'is-invalid': submitted && f.scope.errors }" >
+                    <div *ngIf="submitted && f.scope.errors" class="invalid-feedback">
+                        <div *ngIf="f.scope.errors.required">Scope is required</div>
+                    </div>
+                    <div >
+                        <h6 style="color:green">Green</h6>
+                    </div>
+                    </div>
+                    <div class="form-check">
+                    <input class="form-check-input" type="radio" name="scope" formControlName="scope" id="scopeYellow" value="yellow"  [ngClass]="{ 'is-invalid': submitted && f.scope.errors }">
+                    <div >
+                        <h6 style="color:yellow">Yellow</h6>
+                    </div>
+                    </div>
+                    <div class="form-check disabled">
+                    <input class="form-check-input" type="radio" name="scope" formControlName="scope" id="scopeRed" value="red"  [ngClass]="{ 'is-invalid': submitted && f.scope.errors }">
+                    <div >
+                        <h6 style="color:red">Red</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </fieldset><!-- Scope -->
+    <!-- Schedule -->
+    <fieldset class="form-group">
+        <div class="row">
+            <legend class="col-form-label col-sm-2 pt-0">Schedule</legend>
+            <div class="col-6">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="schedule" formControlName="schedule" id="scheduleGreen" value="green"  [ngClass]="{ 'is-invalid': submitted && f.schedule.errors }" >
+                    <div *ngIf="submitted && f.schedule.errors" class="invalid-feedback">
+                        <div *ngIf="f.schedule.errors.required">Schedule is required</div>
+                    </div>
+                    <div >
+                        <h6 style="color:green">Green</h6>
+                    </div>
+                    </div>
+                    <div class="form-check">
+                    <input class="form-check-input" type="radio" name="schedule" formControlName="schedule" id="scheduleYellow" value="yellow"  [ngClass]="{ 'is-invalid': submitted && f.schedule.errors }">
+                    <div >
+                        <h6 style="color:yellow">Yellow</h6>
+                    </div>
+                    </div>
+                    <div class="form-check disabled">
+                    <input class="form-check-input" type="radio" name="schedule" formControlName="schedule" id="scheduleRed" value="red"  [ngClass]="{ 'is-invalid': submitted && f.schedule.errors }">
+                    <div >
+                        <h6 style="color:red">Red</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </fieldset><!-- Schedule -->
+    <!-- Resources -->
+    <fieldset class="form-group">
+        <div class="row">
+            <legend class="col-form-label col-sm-2 pt-0">Resources</legend>
+            <div class="col-6">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="resources" formControlName="resources" id="resourcesGreen" value="green"  [ngClass]="{ 'is-invalid': submitted && f.resources.errors }" >
+                    <div *ngIf="submitted && f.resources.errors" class="invalid-feedback">
+                        <div *ngIf="f.resources.errors.required">Resources is required</div>
+                    </div>
+                    <div >
+                        <h6 style="color:green">Green</h6>
+                    </div>
+                    </div>
+                    <div class="form-check">
+                    <input class="form-check-input" type="radio" name="resources" formControlName="resources" id="resourcesYellow" value="yellow"  [ngClass]="{ 'is-invalid': submitted && f.resources.errors }">
+                    <div >
+                        <h6 style="color:yellow">Yellow</h6>
+                    </div>
+                    </div>
+                    <div class="form-check disabled">
+                    <input class="form-check-input" type="radio" name="resources" formControlName="resources" id="resourcesRed" value="red"  [ngClass]="{ 'is-invalid': submitted && f.resources.errors }">
+                    <div >
+                        <h6 style="color:red">Red</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </fieldset><!-- Resources -->
+    <!-- Budget -->
+    <fieldset class="form-group">
+        <div class="row">
+            <legend class="col-form-label col-sm-2 pt-0">Budget</legend>
+            <div class="col-6">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="budget" formControlName="budget" id="budgetGreen" value="green"  [ngClass]="{ 'is-invalid': submitted && f.budget.errors }" >
+                    <div *ngIf="submitted && f.budget.errors" class="invalid-feedback">
+                        <div *ngIf="f.budget.errors.required">Budget is required</div>
+                    </div>
+                    <div >
+                        <h6 style="color:green">Green</h6>
+                    </div>
+                    </div>
+                    <div class="form-check">
+                    <input class="form-check-input" type="radio" name="budget" formControlName="budget" id="budgetYellow" value="yellow"  [ngClass]="{ 'is-invalid': submitted && f.budget.errors }">
+                    <div >
+                        <h6 style="color:yellow">Yellow</h6>
+                    </div>
+                    </div>
+                    <div class="form-check disabled">
+                    <input class="form-check-input" type="radio" name="budget" formControlName="budget" id="budgetRed" value="red"  [ngClass]="{ 'is-invalid': submitted && f.budget.errors }">
+                    <div >
+                        <h6 style="color:red">Red</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </fieldset><!-- Budget -->
+    <br>
+    <!-- Beggin Project Information-->
+    <h3>Project Information</h3>
+    <br>
+    <div class="form-group row">
+        <label for="purchaseOrder" class="col-sm-3 col-form-label">Purchase Order</label>
+        <div class="col-sm-9">
+            <input type="text" placeholder="Purchase Order" formControlName="purchaseOrder" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.clientName.errors }" />
+            <div *ngIf="submitted && f.purchaseOrder.errors" class="invalid-feedback">
+                <div *ngIf="f.purchaseOrder.errors.required">Purchase Order is required</div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="preparedBy" class="col-sm-3 col-form-label">Prepared By</label>
+        <div class="col-sm-9">
+            <input type="text" placeholder="Prepared By" formControlName="preparedBy" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.clientName.errors }" />
+            <div *ngIf="submitted && f.preparedBy.errors" class="invalid-feedback">
+                <div *ngIf="f.preparedBy.errors.required">Prepared By is required</div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="leade4th" class="col-sm-3 col-form-label">4th Lead</label>
+        <div class="col-sm-9">
+            <input type="text" placeholder="4th Lead" formControlName="leade4th" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.clientName.errors }" />
+            <div *ngIf="submitted && f.leade4th.errors" class="invalid-feedback">
+                <div *ngIf="f.leade4th.errors.required">4th Lead is required</div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="resources" class="col-sm-3 col-form-label">Resources</label>
+        <div class="col-sm-9">
+            <input type="text" placeholder="# Resources" formControlName="resources" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.clientName.errors }" />
+            <div *ngIf="submitted && f.resources.errors" class="invalid-feedback">
+                <div *ngIf="f.resources.errors.required">4th Lead is required</div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="businessOwner" class="col-sm-3 col-form-label">Business Owner</label>
+        <div class="col-sm-9">
+            <input type="text" placeholder="Business Owner" formControlName="businessOwner" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.clientName.errors }" />
+            <div *ngIf="submitted && f.businessOwner.errors" class="invalid-feedback">
+                <div *ngIf="f.businessOwner.errors.required">4th Lead is required</div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="projectSumary" style="font-size: 15px;" id="sumarypro" class="col-3 col-form-label">Project Summary</label>
+        <div class="col-9">
+            <input type="text" placeholder="Project Summary" formControlName="projectSumary" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.clientName.errors }" />
+            <div *ngIf="submitted && f.projectSumary.errors" class="invalid-feedback">
+                <div *ngIf="f.projectSumary.errors.required">4th Lead is required</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Submit Button -->
+    <div class="form-group">
+        <button [disabled]="loading" class="btn btn-primary" >Save</button>
+        <img *ngIf="loading" class="pl-3" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+    </div><!-- Submit Button -->
+</form>

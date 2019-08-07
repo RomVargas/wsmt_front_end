@@ -1,0 +1,58 @@
+.header-report {
+    color: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-variant: small-caps;
+    text-transform: none;
+    font-weight: 200;
+    margin-bottom: 10;
+    text-decoration: underline;
+    font-size: 35px;
+}
+
+.header-status {
+    color: black;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-variant: small-caps;
+    font-weight: 200;
+    margin-bottom: 10;
+    text-decoration: grey;
+    font-size: 20px;
+    text-align: center;
+}
+
+.green {
+    margin-left: 12px;
+    border-radius: 25px;
+    background: green;
+    padding: 0px;
+    width: 150px;
+    height: 60px;
+}
+
+.yellow {
+    margin-left: 12px;
+    border-radius: 25px;
+    background: orange;
+    padding: 0px;
+    width: 150px;
+    height: 60px;
+}
+
+.red {
+    border-radius: 25px;
+    background: red;
+    margin-left: 12px;
+    width: 150px;
+    height: 60px;
+}
+
+.blue-border {
+    border-style: solid;
+    border-color: #a8c2ea;
+    padding: 25px;
+    border-radius: 15px;
+}
+
+.black-font {
+    color: black;
+}

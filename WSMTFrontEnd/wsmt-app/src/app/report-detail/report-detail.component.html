@@ -1,0 +1,166 @@
+
+<div class="card border-primary mb-3">
+  <div class="card-header text-center header-report" >{{report.clientName}} : {{report.projectName}}</div>
+    <div class="card-body text-primary">
+      <h5 class="card-tilte">Project Status Information</h5>
+        <br>
+        <div class="container-fluid"><!-- Beggin Status info -->
+          <div class="row">
+            <div class="col">
+              <h5 class="header-status">Status</h5>
+            </div>
+            <div class="col">
+              <h5 class="header-status">Scope</h5>
+            </div>
+            <div class="col">
+              <h5 class="header-status">Schedule</h5>
+            </div>
+            <div class="col">
+              <h5 class="header-status">Resources</h5>
+            </div>
+            <div class="col">
+              <h5 class="header-status">Budget</h5>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div [ngClass]="{'green': report.status == 'green',
+                               'yellow': report.status == 'yellow',
+                               'red': report.status == 'red'}">
+              </div>
+            </div>
+            <div class="col">
+              <div [ngClass]="{'green': report.scope == 'green',
+                               'yellow': report.scope == 'yellow',
+                               'red': report.scope == 'red'}">
+              </div>
+            </div>
+            <div class="col">
+              <div [ngClass]="{'green': report.schedule == 'green',
+                               'yellow': report.schedule == 'yellow',
+                               'red': report.schedule == 'red'}">
+              </div>
+            </div>
+            <div class="col">
+              <div [ngClass]="{'green': report.resources == 'green',
+                               'yellow': report.resources == 'yellow',
+                               'red': report.resources == 'red'}">
+              </div>
+            </div>
+            <div class="col">
+              <div [ngClass]="{'green': report.budget == 'green',
+                               'yellow': report.budget == 'yellow',
+                               'red': report.budget == 'red'}">
+              </div>
+            </div>
+          </div>
+        </div><!-- End Status Info -->
+        <br>
+        <hr><!-- Start Project Information-->
+        <h5 class="card-tilte">Project Information</h5>
+        <br>
+        <!-- Beggin left table-->
+        <div class="row">
+          <div class="col-6">
+            <table class="table table-bordered">
+              <tbody>
+                <tr>
+                  <th scope="row">Project</th>
+                  <td>{{report.projectName}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">Purchase Order </th>
+                  <td>{{report.purchaseOrder}}</td>
+                </tr>
+                <tr>
+                  <th scope="row"># Resources</th>
+                  <td>{{report.numResources}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div><!-- Beggin left table-->
+          <!-- Beggin right table-->
+          <div class="col-6">
+            <table class="table table-bordered">
+              <tbody>
+                <tr>
+                  <th scope="row">Prepared By</th>
+                  <td>{{report.preparedBy}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">4th Lead</th>
+                  <td>{{report.lead4th}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">Business Owner</th>
+                  <td>{{report.businessOwner}}</td>
+                </tr>
+              </tbody>
+            </table><!-- Ends right table-->
+          </div>
+        </div><!-- End's Project Information-->
+        <!-- Beggin Project Summary -->
+        <span class="border border-light">
+          <div class="row">
+            <div class="col-12 blue-border">
+              <label class="card-text">Project Summary:</label>
+              <hr>
+              <p class="black-font">{{report.projectSummary}}</p>
+            </div>
+          </div>
+        </span><!-- End Project Summary -->
+        <!-- Delivery Milestone -->
+        <table class="table table-bordered">
+          <thead class="thead-light">
+            <tr>
+              <th scope="col">Delivery Milestone</th>
+              <th scope="col">Target Date</th>
+              <th scope="col">% Comp</th>
+              <th scope="col">Risk</th>
+              <th scope="col">Mitigation Actions</th>
+              <th scope="col">Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td scope="row">{{report.taskName}}</td>
+              <td>{{report.targetDate}}</td>
+              <td>{{report.completeness}} %</td>
+              <td>{{report.risk}}</td>
+              <td>{{report.mitigationActions}}</td>
+              <td>{{report.notes}}</td>
+            </tr>
+          </tbody>
+        </table><!-- Delivery Milestone -->
+        <hr>
+        <!-- Beggin Accomplishments -->
+        <div class="card-body text-primary">
+          <h5 class="card-tilte">Accomplishments:</h5>
+            <ul>
+              <li class="black-font" *ngFor="let accomplish of accomplishments">
+                  {{accomplish.description}}
+              </li>
+            </ul>
+        </div><!-- Ends Accomplishments -->
+        <hr>
+        <!-- Beggin Activities-->
+        <div class="card-body text-primary">
+          <h5 class="card-tilte">Activities Next Week:</h5>
+            <ul>
+              <li class="black-font" *ngFor="let activity of activities">
+                  {{activity.description}}
+              </li>
+            </ul>
+        </div><!-- End's Activities-->
+        <hr>
+        <!-- Beggin Issues-->
+        <div class="card-body text-primary">
+          <h5 class="card-tilte">Issues/Risk:</h5>
+            <ul>
+              <li class="black-font" *ngFor="let issue of issues">
+                  {{issue.description}}
+              </li>
+            </ul>
+        </div>
+  </div>
+</div>

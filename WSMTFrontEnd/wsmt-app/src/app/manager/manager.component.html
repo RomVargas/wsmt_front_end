@@ -1,0 +1,67 @@
+<div class="card border-primary mb-3">
+  <div class="card-header">Manager</div>
+    <div class="card-body text-primary">
+      <h5 class="card-tilte">Reports List</h5>
+        <div class="table-responsive">
+        <table  mdbTable mdbTableScroll scrollX="true" maxWidth="400" class="table table-bordered table-striped" id="report">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Client Name</th>
+              <th>Project Name</th>
+              <th>Status</th>
+              <th>Scope</th>
+              <th>Schedule</th>
+              <th>Resources</th>
+              <th>Budget</th>
+              <th>Purchase Order</th>
+              <th>Prepared By</th>
+              <th>4th Lead</th>
+              <th># Resources</th>
+              <th>Business Owner</th>
+              <th>Project Summary</th>
+              <th>Task Name</th>
+              <th>Target Date</th>
+              <th>% Completeness</th>
+              <th>Risk</th>
+              <th>Mitigation Actions</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let report of reports">
+              <td>{{report.id}}</td>
+              <td><a>{{report.clientName}}</a></td>
+              <td>{{report.projectName}}</td>
+              <td [ngClass]="{'green': report.status =='green',
+                              'yellow': report.status == 'yellow',
+                              'red': report.status == 'red'}">{{report.status}}</td>
+              <td [ngClass]="{'green': report.scope =='green',
+                              'yellow': report.scope == 'yellow',
+                              'red': report.scope == 'red'}">{{report.scope}}</td>
+              <td [ngClass]="{'green': report.schedule =='green',
+                              'yellow': report.schedule == 'yellow',
+                              'red': report.schedule == 'red'}">{{report.schedule}}</td>
+              <td [ngClass]="{'green': report.resources =='green',
+                              'yellow': report.resources == 'yellow',
+                              'red': report.resources == 'red'}">{{report.resources}}</td>
+              <td [ngClass]="{'green': report.budget =='green',
+                              'yellow': report.budget == 'yellow',
+                              'red': report.budget == 'red'}">{{report.budget}}</td>
+              <td>{{report.purchaseOrder}}</td>
+              <td>{{report.preparedBy}}</td>
+              <td>{{report.leade4th}}</td>
+              <td>{{report.numResources}}</td>
+              <td>{{report.businessOwner}}</td>
+              <td>{{report.projectSumary}}</td>
+              <td>{{report.taskName}}</td>
+              <td>{{report.targetDate}}</td>
+              <td>{{report.completeness}}</td>
+              <td>{{report.risk}}</td>
+              <td>{{report.mitigationActions}}</td>
+              <td>{{report.notes}}</td>
+          </tbody>
+        </table>
+      </div>
+    </div>
+</div>

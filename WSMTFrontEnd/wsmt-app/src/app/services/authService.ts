@@ -54,11 +54,13 @@ export class AuthService {
 
   saveUser(accessToken: string): void {
     let payload = this.getDataToken(accessToken);
+    debugger
+    console.log('payload: ' , payload);
     this._user = new User();
-    this._user.firstName = payload.firstName;
-    this._user.lastName = payload.lastName;
+    this._user.firstName = payload.name;
+    this._user.lastName = payload.last_name;
     this._user.email = payload.email;
-    this._user.username = payload.userName;
+    this._user.username = payload.user_name;
     this._user.roles = payload.authorities;
     sessionStorage.setItem('user', JSON.stringify(this._user));
   }

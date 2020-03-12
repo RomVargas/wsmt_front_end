@@ -14,19 +14,19 @@ import { Report } from '../models/report';
   styleUrls: ['./lead.component.css']
 })
 export class LeadComponent implements OnInit {
-  private form: FormGroup;
-  private loading = false;
-  private submitted = false;
-  private returnUrl: string;
-  private report: Report = new Report();
+  public form: FormGroup;
+  public loading = false;
+  public submitted = false;
+  public returnUrl: string;
+  public report: Report = new Report();
 
 
   constructor(
-    private formBuilder: FormBuilder,
-    private route: ActivatedRoute,
-    private router: Router,
-    private alertService: AlertService,
-    private reportService: ReportService
+    public formBuilder: FormBuilder,
+    public route: ActivatedRoute,
+    public router: Router,
+    public alertService: AlertService,
+    public reportService: ReportService
   ) {
     // redirect to home if already logged in
       /*if (this.authenticationService.currentUserValue) {

@@ -22,12 +22,12 @@ export class ProjectAssignedComponent implements OnInit {
       email:"test@test.com",
       token:"123"
     };*/
-  private user: User = new User();
+    public user: User = new User();
 
   constructor(
-    private activatedRoute: ActivatedRoute,
-    private router: Router,
-    private userService: UserService
+    public activatedRoute: ActivatedRoute,
+    public router: Router,
+    public userService: UserService
   ) { }
 
   ngOnInit() {

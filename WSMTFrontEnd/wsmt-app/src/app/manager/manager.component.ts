@@ -16,7 +16,7 @@ export class ManagerComponent implements OnInit {
   reportSubscription: Subscription;
   reports: Report[] = [];
   user: User;
-  constructor(private reportService: ReportService, private authService: AuthService) {
+  constructor(public reportService: ReportService, public authService: AuthService) {
 
   }
 

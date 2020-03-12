@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit {
 
   title: string = 'Weekly Status Management Tool';
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(public authService: AuthService, private router: Router) { }
 
   ngOnInit() {
     let user = this.authService.user

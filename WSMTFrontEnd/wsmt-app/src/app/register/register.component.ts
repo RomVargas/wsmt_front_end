@@ -14,10 +14,10 @@ export class RegisterComponent implements OnInit {
 
 
     constructor(
-        private formBuilder: FormBuilder,
-        private router: Router,
-        private userService: UserService,
-        private alertService: AlertService
+        public formBuilder: FormBuilder,
+        public router: Router,
+        public userService: UserService,
+        public alertService: AlertService
     ) {
         // redirect to home if already logged in
         /*if (this.authenticationService.currentUserValue) {

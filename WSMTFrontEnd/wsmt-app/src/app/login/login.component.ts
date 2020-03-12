@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   title = 'Please Sign In!';
   user: User;
 
-  constructor(private authService: AuthService, private router: Router) {
+  constructor(public authService: AuthService, public router: Router) {
     this.user = new User();
   }
 

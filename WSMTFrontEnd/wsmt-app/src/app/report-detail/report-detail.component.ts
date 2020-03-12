@@ -14,7 +14,10 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class ReportDetailComponent implements OnInit {
 
-  private report : Report = new Report();
+  report : Report = new Report();
+  issues : Issue[];
+  activities : Activity[];
+  accomplishments : Accomplishment[];
   constructor(
     private reportService: ReportService,
     private router: Router,

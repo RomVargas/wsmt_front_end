@@ -8,8 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "_comment":"la siguiente propiedad es para sonarScanner",
-    "cibuild": "ng test --single-run --cc && ng build --prod --no-progress" 
+    "_comment": "la siguiente propiedad es para sonarScanner",
+    "cibuild": "ng test && ng build --prod --no-progress"
   },
   "private": true,
   "dependencies": {

@@ -21,6 +21,7 @@ import { ReportDetailComponent } from './report-detail/report-detail.component';
 
 @NgModule({
   declarations: [
+    HeaderComponent,
     AppComponent,
     HomeComponent,
     LoginComponent,
@@ -28,7 +29,6 @@ import { ReportDetailComponent } from './report-detail/report-detail.component';
     LeadComponent,
     ManagerComponent,
     ProjectAssignedComponent,
-    HeaderComponent,
     FooterComponent,
     ReportDetailComponent
   ],

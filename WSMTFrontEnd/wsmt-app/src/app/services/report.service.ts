@@ -7,7 +7,7 @@ import { Report } from '../models/report';
 @Injectable({ providedIn: 'root' })
 export class ReportService {
 
-  private apiUrl: string = 'http://localhost:8080';
+  private apiUrl: string = 'http://localhost:8090';
   private httpHeaders = new HttpHeaders({'ContenType':'application/json'});
 
   constructor(private http: HttpClient) {}

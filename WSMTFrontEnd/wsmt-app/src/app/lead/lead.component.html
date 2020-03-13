@@ -315,7 +315,7 @@
     <div class="form-group row">
         <label for="accomplishments" class="col-3 col-form-label">Accomplishments</label>
         <div class="col-9">
-            <div  formArrayName="accomplishments" *ngFor="let accomplishments of form.controls['accomplishments'].controls; let i = index">
+            <div  formArrayName="accomplishments" *ngFor="let accomplishments of form.controls['accomplishments']['controls']; let i = index">
                 <div [formGroupName]="i">
                     <div class="row">
                 <div class="col-8">
@@ -324,7 +324,7 @@
                     </div>
                 </div>
                 <div class="col-4">
-                    <button *ngIf="form.controls.accomplishments.controls.length > 1" type="button" class="btn btn-danger  " (click)="removeAccomplishment(i)">Remove</button>&nbsp;
+                    <button *ngIf="form.controls.accomplishments['controls'].length > 1" type="button" class="btn btn-danger  " (click)="removeAccomplishment(i)">Remove</button>&nbsp;
                     <button type="button" (click)="addNextItem('accomplishment')" class="btn btn-primary">Add Next</button>
                 </div>
               </div>
@@ -341,7 +341,7 @@
     <div class="form-group row">
         <label for="activities" class="col-3 col-form-label">Activities</label>
         <div class="col-9">
-            <div  formArrayName="activities" *ngFor="let activities of form.controls['activities'].controls; let i = index">
+            <div  formArrayName="activities" *ngFor="let activities of form.controls['activities']['controls']; let i = index">
                 <div [formGroupName]="i">
                     <div class="row">
                 <div class="col-8">
@@ -350,7 +350,7 @@
                     </div>
                 </div>
                 <div class="col-4">
-                    <button *ngIf="form.controls.activities.controls.length > 1" type="button" class="btn btn-danger  " (click)="removeActivity(i)">Remove</button>&nbsp;
+                    <button *ngIf="form.controls.activities['controls'].length > 1" type="button" class="btn btn-danger  " (click)="removeActivity(i)">Remove</button>&nbsp;
                     <button type="button" (click)="addNextItem('activity')" class="btn btn-primary">Add Next</button>
                 </div>
               </div>
@@ -367,7 +367,7 @@
     <div class="form-group row">
         <label for="issues" class="col-3 col-form-label">Issues</label>
         <div class="col-9">
-            <div  formArrayName="issues" *ngFor="let issue of form.controls['issues'].controls; let i = index">
+            <div  formArrayName="issues" *ngFor="let issue of form.controls['issues']['controls']; let i = index">
                 <div [formGroupName]="i">
                     <div class="row">
                 <div class="col-8">
@@ -377,7 +377,7 @@
                 </div>
 
                 <div class="col-4">
-                    <button *ngIf="form.controls.issues.controls.length > 1" type="button" class="btn btn-danger  " (click)="removeIssue(i)">Remove</button>&nbsp;
+                    <button *ngIf="form.controls.issues['controls'].length > 1" type="button" class="btn btn-danger  " (click)="removeIssue(i)">Remove</button>&nbsp;
                     <button type="button" (click)="addNextItem('issue')" class="btn btn-primary">Add Next</button>
                 </div>
               </div>

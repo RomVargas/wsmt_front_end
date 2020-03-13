@@ -10,7 +10,7 @@ export class AuthService {
 
   private _user: User;
   private _token: string;
-  private apiUrl: string = "http://localhost:8080";
+  private apiUrl: string = "http://localhost:8090";
 
   constructor(private http: HttpClient) { }
 
